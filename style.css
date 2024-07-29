@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #08f;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  transform: translateY(50%);
+}
+
+.decr {
+  max-width: 300px;
+  margin: 100px auto;
+}
+
+button {
+  background-color: white;
+  color: #08f;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
