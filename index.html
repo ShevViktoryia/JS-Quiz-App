@@ -25,11 +25,18 @@
     <link rel="manifest" href="/assets/site.webmanifest" />
   </head>
   <body>
-    <h1>HTML Quiz Challenge</h1>
-    <p class="decr">
-      Try to answer the following questions within the time limit. Incorrect
-      answers will penalize your score/time by ten seconds.
-    </p>
-    <button>Start</button>
+    <div class="quiz-start-conteiner">
+      <h1>HTML Quiz Challenge</h1>
+      <p class="decr">
+        Try to answer the following questions within the time limit. Incorrect
+        answers will penalize your score/time by ten seconds.
+      </p>
+      <button>Start</button>
+    </div>
+    <div class="questions" id="questions">
+      <h2 id="question-title"></h2>
+      <div class="options" id="options"></div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>

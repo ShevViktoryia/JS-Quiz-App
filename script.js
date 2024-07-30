@@ -29,3 +29,21 @@ let questions = [
     answer: "<header>",
   },
 ];
+
+let curInd = 0;
+let options = document.getElementById("options");
+
+function getQuestion() {
+  let curQuestion = questions[curInd];
+  let questTitle = document.getElementById("question-title");
+  questTitle.textContent = curQuestion.prompt;
+  options.innerHTML = "";
+  curQuestion.options.forEach((answer, i) => {
+    let btn = document.createElement("document");
+    btn.setAttribute("value", answer);
+    btn.textContent = i + 1 + ". " + answer;
+    options.appendChild(btn);
+  });
+}
+
+getQuestion();
