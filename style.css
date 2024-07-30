@@ -37,3 +37,7 @@ button:hover {
   border: 1px solid white;
   cursor: pointer;
 }
+
+.hide {
+  display: none;
+}

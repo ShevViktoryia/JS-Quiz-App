@@ -32,6 +32,12 @@ let questions = [
 
 let curInd = 0;
 let options = document.getElementById("options");
+let start_btn = document.querySelector("#start-btn");
+
+start_btn.onclick = () => {
+  document.querySelector(".quiz-start-conteiner").classList.add("hide");
+  document.querySelector(".questions").classList.remove("hide");
+};
 
 function getQuestion() {
   let curQuestion = questions[curInd];
