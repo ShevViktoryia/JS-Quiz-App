@@ -22,16 +22,17 @@ h1 {
 
 button {
   background-color: white;
-  transition: 0.5s;
+  transition: 0.2s;
   color: #08f;
   font-size: 18px;
+  border: 1px solid white;
   font-weight: 600;
   padding: 10px 20px;
-  border: none;
   border-radius: 5px;
 }
 
-button:hover {
+button:hover,
+button:active {
   background-color: #08f;
   color: white;
   border: 1px solid white;
@@ -40,4 +41,24 @@ button:hover {
 
 .hide {
   display: none;
+}
+
+.questions {
+  max-width: 700px;
+  width: 100%;
+  border: 1px solid white;
+  margin: 150px auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#question-title {
+  font-size: 30px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.options button {
+  display: block;
+  margin: 10px 0;
 }

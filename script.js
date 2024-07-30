@@ -45,7 +45,7 @@ function getQuestion() {
   questTitle.textContent = curQuestion.prompt;
   options.innerHTML = "";
   curQuestion.options.forEach((answer, i) => {
-    let btn = document.createElement("document");
+    let btn = document.createElement("button");
     btn.setAttribute("value", answer);
     btn.textContent = i + 1 + ". " + answer;
     options.appendChild(btn);
