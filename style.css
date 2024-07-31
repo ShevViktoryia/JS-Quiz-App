@@ -62,3 +62,12 @@ button:active {
   display: block;
   margin: 10px 0;
 }
+
+.feedback {
+  font-style: bold;
+  font-size: 20px;
+  margin-top: 20px;
+  padding-top: 15px;
+  color: white;
+  border-top: 2px solid #08f;
+}

@@ -33,10 +33,13 @@ let questions = [
 let curInd = 0;
 let options = document.getElementById("options");
 let start_btn = document.querySelector("#start-btn");
+let answer_status = document.getElementById("answer-status");
 
 start_btn.onclick = () => {
   document.querySelector(".quiz-start-conteiner").classList.add("hide");
   document.querySelector(".questions").classList.remove("hide");
+
+  getQuestion();
 };
 
 function getQuestion() {
@@ -48,8 +51,24 @@ function getQuestion() {
     let btn = document.createElement("button");
     btn.setAttribute("value", answer);
     btn.textContent = i + 1 + ". " + answer;
+    btn.onclick = checkAnswer;
     options.appendChild(btn);
   });
 }
 
-getQuestion();
+function checkAnswer() {
+  if (this.value !== questions[curInd].answer) {
+    answer_status.textContent = `Wrong! The correct answer - 
+    ${questions[curInd].answer}.`;
+    answer_status.style.color = "red";
+  } else {
+    answer_status.textContent = "Correct!";
+    answer_status.style.color = "green";
+  }
+  answer_status.setAttribute("class", "answer-status");
+  setTimeout(() => {
+    answer_status.setAttribute("class", "answer-status hide");
+  }, 2000);
+  curInd++;
+  curInd === questions.length ? alert("end") : getQuestion();
+}
