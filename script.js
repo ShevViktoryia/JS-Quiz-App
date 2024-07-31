@@ -34,12 +34,18 @@ let curInd = 0;
 let options = document.getElementById("options");
 let start_btn = document.querySelector("#start-btn");
 let answer_status = document.getElementById("answer-status");
+let timer = document.getElementById("time");
+
+let gameTime = questions.length * 15;
+let curTime;
 
 start_btn.onclick = () => {
   document.querySelector(".quiz-start-conteiner").classList.add("hide");
   document.querySelector(".questions").classList.remove("hide");
 
   getQuestion();
+  curTime = setInterval(minusTime, 1000);
+  timer.innerHTML = gameTime;
 };
 
 function getQuestion() {
@@ -56,10 +62,23 @@ function getQuestion() {
   });
 }
 
+function minusTime() {
+  gameTime--;
+  timer.innerHTML = gameTime;
+  if (gameTime <= 0) {
+    alert("end");
+  }
+}
+
 function checkAnswer() {
   if (this.value !== questions[curInd].answer) {
     answer_status.textContent = `Wrong! The correct answer - 
     ${questions[curInd].answer}.`;
+    if (gameTime < 0) {
+      gameTime = 0;
+    }
+    gameTime -= 10;
+    timer.innerHTML = gameTime;
     answer_status.style.color = "red";
   } else {
     answer_status.textContent = "Correct!";
@@ -70,5 +89,10 @@ function checkAnswer() {
     answer_status.setAttribute("class", "answer-status hide");
   }, 2000);
   curInd++;
-  curInd === questions.length ? alert("end") : getQuestion();
+  if (curInd === questions.length) {
+    alert("end");
+    document.querySelector(".questions").classList.add("hide");
+  } else {
+    getQuestion();
+  }
 }
