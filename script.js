@@ -94,6 +94,14 @@ function checkAnswer() {
     document.querySelector(".final-screen").classList.remove("hide");
     document.querySelector(".questions").classList.add("hide");
     document.querySelector(".final-score").textContent = gameTime;
+    document.getElementById("restart").onclick = () => {
+      document.querySelector(".quiz-start-conteiner").classList.remove("hide");
+      document.querySelector(".final-screen").classList.add("hide");
+      curInd = 0;
+      timer.textContent = 0;
+      gameTime = questions.length * 15;
+      getQuestion();
+    };
   } else {
     getQuestion();
   }
