@@ -92,8 +92,8 @@ function checkAnswer() {
   if (curInd === questions.length) {
     clearInterval(curTime);
     document.querySelector(".final-screen").classList.remove("hide");
-    alert("end");
     document.querySelector(".questions").classList.add("hide");
+    document.querySelector(".final-score").textContent = gameTime;
   } else {
     getQuestion();
   }
